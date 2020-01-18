@@ -37,9 +37,9 @@ function Main(){
         <Image style={styles.avatar} source={{ uri: 'https://avatars3.githubusercontent.com/u/36611739?s=400&v=4' }}/>
         <Callout>
             <View style={styles.Callout}>
-            <Text>Caio Farinha</Text>
-            <Text>SW Test Intern at Samsung R&D Institute Brazil - SRBR. Student at Unimetrocamp.</Text>
-            <Text>Python, Dart</Text>
+            <Text style={styles.devName}>Caio Farinha</Text>
+            <Text style={styles.devBio}>SW Test Intern at Samsung R&D Institute Brazil - SRBR. Student at Unimetrocamp.</Text>
+            <Text style={styles.devTechs}>Python, Dart</Text>
             </View>
         </Callout>
         </Marker>
