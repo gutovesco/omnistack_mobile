@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Image } from 'react-native'
+import { StyleSheet, Image, View, Text, TextInput, TouchableOpacity } from 'react-native';
 import MapView, { Marker, Callout }from 'react-native-maps';
-import { requestPermissionsAsync, getCurrentPositionAsync } from 'expo-location'
+import { requestPermissionsAsync, getCurrentPositionAsync } from 'expo-location';
+import { MaterialIcons } from '@expo/vector-icons';
 
 function Main( { navigation } ){
     const [currentRegion, setCurrentRegion ] = useState(null);
@@ -32,7 +33,8 @@ function Main( { navigation } ){
     }
 
     return (
-    <MapView initialRegion={currentRegion} style={ styles.map }>
+    <>
+        <MapView initialRegion={currentRegion} style={ styles.map }>
         <Marker coordinate={{latitude: -22.4703614, longitude: -46.6089902}}>
         <Image style={styles.avatar} source={{ uri: 'https://avatars3.githubusercontent.com/u/36611739?s=400&v=4' }}/>
         <Callout onPress={() => {
@@ -46,6 +48,19 @@ function Main( { navigation } ){
         </Callout>
         </Marker>
     </MapView>
+        <View style={styles.searchForm}>
+        <TextInput 
+        style={styles.searchInput}
+        placeholder="Buscar devs por techs..."
+        placeholderTextColor="#999"
+        autoCapitalize="words"
+        autoCorrect={false}
+        />
+        <TouchableOpacity onPress={() => {}} style={styles.loadButton}>
+        <MaterialIcons name="my-location" size={20} color="#fff"/>
+        </TouchableOpacity>
+        </View>
+    </>
     );
 }
 
@@ -58,7 +73,7 @@ const styles = StyleSheet.create({
         height: 54,
         borderRadius: 4,
         borderWidth: 4,
-        borderColor: 'fff'
+        borderColor: '#fff'
     },
     callout: {
         width: 260,
@@ -74,6 +89,14 @@ const styles = StyleSheet.create({
     },
     devTechs: {
         marginTop: 5,
+    },
+    searchForm: {
+        position: 'absolute',
+        bottom: 20,
+        left: 20,
+        right: 20,
+        zIndex: 5,
+        flexDirection: 'row',
     }
 
 })
