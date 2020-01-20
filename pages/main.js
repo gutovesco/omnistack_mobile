@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     devBio: {
-        color: '666',
+        color: '#666',
         marginTop: 5
     },
     devTechs: {
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
         width: 50,
         height: 50,
         backgroundColor: '#8e4dff',
-        borderRadius: 25,
+        borderRadius: 20,
         justifyContent: 'center',
         alignItems: 'center',
         marginLeft: 15,
